@@ -1,71 +1,71 @@
-# LEGO Control System — v2 (voorstel)
+# LEGO Control System — v2 (proposal)
 
-Een open-source, modulair systeem om je LEGO-stad te automatiseren: schakelaarbediening, verkeerslichten en huisverlichting bedienen zonder ze aan te raken.
+An open-source, modular system to automate your LEGO city: control switches, traffic lights, and house lights without touching them.
 
-## Wat is dit
-LEGO Control System biedt eenvoudige hardware‑ en softwaremodules waarmee je knoppen, servomotoren en verlichting op afstand kunt aansturen. Het doel is een praktische, toegankelijke basis voor hobbyisten en makers (ook voor wie hulp nodig heeft bij bouwen).
+## What this is
+LEGO Control System provides simple hardware and software modules to remotely control buttons, servos, and lighting. The goal is a practical, accessible foundation for hobbyists and makers (including people who need extra help building).
 
-## Doelstellingen
-- Modulaire hardware: elk module‑type is klein, makkelijk te bouwen en te vervangen.  
-- Gebruiksvriendelijke besturing: eenvoudige interface op een hoofdunit (TFT + knoppen) en optionele web-/MQTT‑interface.  
-- Toegankelijkheid: duidelijke bouwinstructies en voorbeelden zodat ook minder ervaren bouwers kunnen meedoen.
+## Objectives
+- Modular hardware: each module type is small, easy to build, and replaceable.  
+- User-friendly control: a simple main-unit interface (TFT + buttons) and optional web/MQTT interface.  
+- Accessibility: clear build instructions and examples so less-experienced builders can participate.
 
-## Overzicht — Main Control Box
+## Overview — Main Control Box
 - TFT display (status + menu)  
-- 20 fysieke knoppen (1 knop → 1 module, of meerdere knoppen per module)  
-- Microcontroller: compatibel met veel boards (bijv. ESP32, Raspberry Pico) — keuze vrij te bepalen per build  
-- Voeding: 5V DC, voldoende stroom voor servomotoren en LEDs  
-- Communicatie: seriële, I2C of Wi‑Fi/MQTT (optioneel)
+- 20 physical buttons (1 button → 1 module, or multiple buttons per module)  
+- Microcontroller: compatible with many boards (e.g., ESP32, Raspberry Pi Pico) — choice flexible per build  
+- Power: 5V DC, sufficient current for servos and LEDs  
+- Communication: serial, I2C or Wi‑Fi/MQTT (optional)
 
-## Modules (eerste set)
-- Main module (core): configuratie, routing en centrale communicatie.  
+## Modules (initial set)
+- Main module (core): configuration, routing and central communication.  
 - Train switch module:
-  - Tot 2 servomotoren (stappen/positieinstelling mogelijk)
-  - Tot 4 lichtmasten (aan/uit + dim)
-  - Eenvoudige aansluiting: 3‑ of 4‑pin connectoren voor servo’s en verlichting
-- Light module (later): meerdere LEDs/strip‑uitgangen per module
+  - Up to 2 servos (step/position control possible)
+  - Up to 4 light poles (on/off + dim)
+  - Simple connector: 3- or 4-pin connectors for servos and lights
+- Light module (later): multiple LED/strip outputs per module
 
-## Hardware specificaties (voorbeeld — aan te passen)
-- Servo voeding: gescheiden 5V rail aanbevolen voor servomotoren  
-- Signaal: standaard PWM voor servo’s  
-- Connectoren: JST‑3/4 pin of vergelijkbaar voor makkelijke montage  
-- PCB‑footprint: kleine modulesize (bv. 40×25 mm) met schroefbevestiging
+## Hardware specifications (example — adjustable)
+- Servo power: separate 5V rail recommended for servos  
+- Signal: standard PWM for servos  
+- Connectors: JST 3/4-pin or similar for easy assembly  
+- PCB footprint: small module size (e.g., 40×25 mm) with screw mounting
 
-## Software overzicht
-- Firmware: modulair, updatebaar per module (voorbeeldprojecten voor ESP32 beschikbaar)  
-- Communicatieprotocollen: eenvoudige tekst‑API over seriële of MQTT‑topicstructuur  
-- UI: lokaal op TFT + knoppen; optioneel webinterface of mobiele app via MQTT
+## Software overview
+- Firmware: modular, updatable per module (example projects for ESP32 available)  
+- Communication protocols: simple text API over serial or MQTT topic structure  
+- UI: local on TFT + buttons; optional web interface or mobile control via MQTT
 
 ## Roadmap (v2)
-1. Documentatie uitbreiden
-   - Gedetailleerde README (dit voorstel)
-   - Wiring diagrams en connector-annotaties
-2. Hardware ontwerpen
-   - Eenvoudige Eagle/ KiCad‑schetsen voor train switch module
-   - Prototype PCB en 3D‑behuizing
-3. Firmware voorbeelden
-   - ESP32 voorbeeld: servo + LED controle via MQTT en seriële commando’s
-   - Basale calibratie‑routine voor wissels
+1. Expand documentation
+   - Detailed README (this proposal)
+   - Wiring diagrams and connector annotations
+2. Design hardware
+   - Simple Eagle/KiCad sketches for the train switch module
+   - Prototype PCB and 3D enclosure
+3. Firmware examples
+   - ESP32 example: servo + LED control via MQTT and serial commands
+   - Basic calibration routine for switches
 4. GUI / Control UI
-   - Basismenu op TFT
-   - Optionele web‑UI voor afstandsbediening via Wi‑Fi
+   - Basic menu on TFT
+   - Optional web UI for remote control over Wi‑Fi
 5. Tests & releases
-   - Hardware testchecklist
-   - 1.0 release met voorbeeld‑build en bill of materials (BOM)
-6. Community & toegankelijkheid
-   - NL/EN documentatie
-   - Stappenplan voor bouwers met beperkte ervaring
+   - Hardware test checklist
+   - 1.0 release with example build and bill of materials (BOM)
+6. Community & accessibility
+   - NL/EN documentation
+   - Step-by-step guides for builders with limited experience
 
-## Hoe bijdragen
-- Issues voor bugs, verbeteringen of ideeën. Gebruik labels: enhancement, bug, docs.  
-- Pull requests: fork → branch → PR. Voeg in PR een korte beschrijving en testinstructies toe.  
-- Code style: duidelijke, gedocumenteerde commits; hardware‑bestanden in /hardware; firmware in /firmware.
+## How to contribute
+- Open issues for bugs, improvements or ideas. Use labels: enhancement, bug, docs.  
+- Pull requests: fork → branch → PR. Include a short description and test instructions in the PR.  
+- Code style: clear, documented commits; hardware files in /hardware; firmware in /firmware.
 
-## Versiebeheer
-- Dit document is voorstel “v2” — maak gerust opmerkingen of vraag om aanpassingen voordat ik het commit.
+## Versioning
+- This document is proposal “v2” — feel free to request changes before I commit it.
 
-## Licentie
-Zie LICENSE in de repository — gebruik dezelfde licentie als de rest van dit project.
+## License
+See LICENSE in the repository — use the same license as the rest of this project.
 
 ---
-Contact: open een issue of stuur hier een bericht in de repo voor vragen of wensen.
+Contact: open an issue or send a message in the repo for questions or requests.
