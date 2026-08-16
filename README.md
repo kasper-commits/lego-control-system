@@ -1,5 +1,7 @@
 # LEGO Control System — v2 (proposal)
 
+
+
 An open-source, modular system to automate your LEGO city: control switches, traffic lights, and house lights without touching them.
 
 ## What this is
